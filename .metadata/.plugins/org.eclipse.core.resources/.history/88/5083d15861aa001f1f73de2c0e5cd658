@@ -1,0 +1,38 @@
+package com.noyon.main.Student;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Student {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+  private String sName;
+  private String sAge;
+public String getsName() {
+	return sName;
+}
+public void setsName(String sName) {
+	this.sName = sName;
+}
+public String getsAge() {
+	return sAge;
+}
+public void setsAge(String sAge) {
+	this.sAge = sAge;
+}
+public Student(String sName, String sAge) {
+	super();
+	this.sName = sName;
+	this.sAge = sAge;
+}
+public Student() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+  
+  
+}

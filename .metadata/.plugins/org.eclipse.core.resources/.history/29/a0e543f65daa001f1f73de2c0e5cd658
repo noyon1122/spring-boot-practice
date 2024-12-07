@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<h1>This is from home page</h1>
+
+<form action="add">
+
+<h1>
+Enter your name
+</h1>
+<input type="text" name="sName">
+<h1>Enter your age</h1>
+<input type="text" name="sage">
+<button type="submit">Add</button>
+</form>
+</body>
+</html>

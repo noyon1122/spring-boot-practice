@@ -1,0 +1,57 @@
+package com.noyon.main.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.noyon.main.Student.Student;
+import com.noyon.main.repository.StudentRepo;
+
+
+
+@Controller
+public class MainController {
+    @Autowired
+    StudentRepo str;
+	@RequestMapping("/home")
+	public ModelAndView home()
+	{
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("Home.html");
+		return mv;
+	}
+	
+	@PostMapping("/add")
+	public ModelAndView show(@ModelAttribute Student student)
+	{
+		ModelAndView mv=new ModelAndView();
+		str.save(student);
+		mv.setViewName("StudentDetails.html");
+		return mv;
+	}
+	
+	@PostMapping("/find")
+	public String find(@RequestParam int sId, Model m)
+	{
+	   Student student =str.getOne(sId);
+	   m.addAttribute("student",student);
+	   return "StudentDetails.html";
+	 
+	}
+	
+	@GetMapping("/delete")
+	public String Delete(@RequestParam int sId)
+	{
+	   str.deleteAllById(sId);
+	  
+	   return "redirect:/home";
+	 
+	}
+	
+}

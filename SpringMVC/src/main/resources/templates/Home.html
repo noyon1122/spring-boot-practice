@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body>
+<h1>This is from home page</h1>
+
+<form action="add" Method="POST">
+
+<h1>
+Enter your name
+</h1>
+<input type="text" name="sName">
+<h1>Enter your age</h1>
+<input type="text" name="sAge">
+<button type="submit">Add</button>
+</form>
+
+<hr>
+
+<form action="find" Method="GET">
+
+<h1>
+Search by id
+</h1>
+
+<input type="text" name="sId">
+<button type="submit">Find By Id</button>
+</form>
+
+<hr>
+
+<form action="delete" Method="GET">
+
+<h1>
+Delete by id
+</h1>
+
+<input type="text" name="sId">
+<button type="submit">Delete</button>
+</form>
+
+<hr>
+
+<form action="update" Method="POST">
+<h1>Enter your Id</h1>
+<input type="text" name="sId">
+<h1>Enter your name</h1>
+<input type="text" name="sName">
+<h1>Enter your age</h1>
+<input type="text" name="sAge">
+<button type="submit">Update</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+package com.noyon.main.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.noyon.main.Student.Student;
+
+@Controller
+public class MainController {
+    
+	@RequestMapping("/home")
+	public ModelAndView home()
+	{
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("Home.html");
+		return mv;
+	}
+	
+	@RequestMapping("/add")
+	public ModelAndView show(@ModelAttribute Student student)
+	{
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("StudentDetails.html");
+		return mv;
+	}
+	
+}
